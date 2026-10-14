@@ -24,12 +24,18 @@ void show(unsigned char leds)
 int main(void)
 {
     unsigned char leds = 0;
+    int n;
 
-    leds = leds | (1 << 0);    /* 0番目を点ける */
+    printf("反転したいLED番号(0〜7)=");
+    scanf("%d", &n);
+
+    if (n < 0 || n > 7) {
+        printf("範囲外です\n");
+        return 1;
+    }
+
+    leds = leds ^ (1 << n);   /* n番目のLEDを反転 */
     show(leds);
-    leds = leds | (1 << 2);    /* 2番目を点ける */
-    show(leds);
-    leds = leds & ~(1 << 0);   /* 0番目を消す */
-    show(leds);
+
     return 0;
 }

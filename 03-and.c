@@ -13,9 +13,8 @@
 int main(void)
 {
     int a = 0b00000011;   /* 10進数で3 */
-    int b = 0b00000110;   /* 10進数で6 */
-    int c = a & b;
+    int c = ~a;            /* ビットごとのNOT */
 
-    printf("%d\n", c);
+    printf("%d\n", c);     /* 何が表示される？ */
     return 0;
 }

@@ -12,11 +12,14 @@
 
 int main(void)
 {
-    int a = 0b00000011;
-    int b = 0b00000110;
+    int a = 0b00000011;   /* 3 */
+    int b = 0b00000110;   /* 6 */
 
-    int c = 0;   /* ここを書き換える */
+    int c = a ^ b;         /* 5 */
+    printf("%d\n", c);      /* 5 */
 
-    printf("%d\n", c);
+    c = c ^ b;             /* 5 ^ 6 = 3 */
+    printf("%d\n", c);      /* 3 */
+
     return 0;
 }
